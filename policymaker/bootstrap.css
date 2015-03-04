@@ -6582,11 +6582,11 @@ button.close {
 }
 .navbar {
   background: #4a4649;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4a4649), color-stop(90%, #4a4649), color-stop(90%, #524e50), color-stop(100%, #524e50));
-  background: -webkit-linear-gradient(top, #4a4649 0%, #4a4649 90%, #524e50 90%, #524e50 100%);
-  background: -o-linear-gradient(top, #4a4649 0%, #4a4649 90%, #524e50 90%, #524e50 100%);
-  background: -webkit-gradient(linear, left top, left bottom, from(#4a4649), color-stop(90%, #4a4649), color-stop(90%, #524e50), to(#524e50));
-  background: linear-gradient(to bottom, #4a4649 0%, #4a4649 90%, #524e50 90%, #524e50 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4a4649), color-stop(100%, #4a4649), color-stop(100%, #524e50), color-stop(100%, #524e50));
+  background: -webkit-linear-gradient(top, #4a4649 0%, #4a4649 100%, #524e50 100%, #524e50 100%);
+  background: -o-linear-gradient(top, #4a4649 0%, #4a4649 100%, #524e50 100%, #524e50 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#4a4649), color-stop(100%, #4a4649), color-stop(100%, #524e50), to(#524e50));
+  background: linear-gradient(to bottom, #4a4649 0%, #4a4649 100%, #524e50 100%, #524e50 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color', endColorstr='#0000ff', GradientType=0);
   border: 1px solid rgba(0, 0, 0, 0.6);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
