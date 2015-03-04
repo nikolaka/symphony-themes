@@ -2,6 +2,8 @@
 // Bootswatch
 // -----------------------------------------------------
 
+// Functions =====================================================================
+
 .under-shadow(@color, @lightenAmount, @distance) {
   @lightColor: lighten(@color, @lightenAmount);
 
@@ -17,27 +19,27 @@
 
 
 .btn-shadow(@color) {
-  .under-shadow(@color, 4%, 90%);
+  .under-shadow(@color, 3%, 90%);
 }
 
 .btn-shadow-custom(@color, @distance) {
-  .under-shadow(@color, 4%, @distance);
+  .under-shadow(@color, 3%, @distance);
 }
 
 .btn-flat(@color) {
-  .under-shadow(@color, 4%, 100%);
+  .under-shadow(@color, 3%, 100%);
 }
 
 .btn-shadow-inverse(@color) {
-  .under-shadow(lighten(@color, 2%), 3%, 92%);
+  .under-shadow(lighten(@color, 5%), 2%, 92%);
 }
 
 .btn-shadow-inverse-custom(@color, @distance) {
-  .under-shadow(lighten(@color, 2%), 3%, @distance);
+  .under-shadow(lighten(@color, 5%), 2%, @distance);
 }
 
 .btn-flat-inverse(@color) {
-  .under-shadow(lighten(@color, 2%), 3%, 100%);
+  .under-shadow(lighten(@color, 5%), 2%, 100%);
 }
 
 // Navbar =====================================================================
@@ -148,9 +150,18 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
 }
 
+a {
+  font-weight: 500;
+}
+
+.text-muted,
+.text-muted:hover {
+  color: @gray-lighter
+}
+
 .text-primary,
 .text-primary:hover {
-  color: @brand-primary;
+  color: lighten(@gray-lighter, 10%);
 }
 
 .text-success,
@@ -171,6 +182,12 @@ h1, h2, h3, h4, h5, h6 {
 .text-info,
 .text-info:hover {
   color: @brand-info;
+}
+
+blockquote {
+  small {
+    color: lighten(@gray-lighter, 10%);
+  }
 }
 
 // Tables =====================================================================
@@ -268,10 +285,16 @@ legend {
 }
 
 .input-group-addon {
-  border-color: rgba(0, 0, 0, 0.6);
+  border-color: @input-border;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   .btn-shadow(@btn-primary-bg);
   color: @btn-default-color;
+}
+
+.input-group-btn {
+  .btn {
+    border-color: @input-border;
+  }
 }
 
 // Navs =======================================================================
@@ -317,21 +340,52 @@ legend {
   margin-bottom: 0px !important;
   border-bottom: none;
 
-  & > li,
-  & > li.active,
-  & > li.disabled,
-  & > li.open,
-  & > li:hover,
-  & > li:active {
-    & > a,
-    & > a:hover,
-    & > a:active,
-    & > a:focus
-    {
-      border: 1px solid fade(lighten(@btn-default-bg, 20%), 50%);
+  & > li {
+    border-top-right-radius: @border-radius-large;
+    border-top-left-radius: @border-radius-large;
+
+    & > a {
+      padding: 6px 12px;
+      .btn-shadow-custom(@btn-default-bg, 88%);
+
+      &:hover {
+        .btn-shadow-inverse-custom(@btn-default-bg, 88%);
+      }
+    }
+
+    &.active > a,
+    &.active > a:hover {
+      background-color: none;
+      .btn-shadow-inverse-custom(lighten(@btn-default-bg, 5%), 88%);
+    }
+
+    &.disabled > a,
+    &.disabled > a:hover {
+      .btn-shadow-custom(@btn-default-bg, 88%);
+    }
+
+    &,
+    &.active,
+    &.disabled,
+    &.open,
+    &:hover,
+    &:active {
+      & > a,
+      & > a:hover,
+      & > a:active,
+      & > a:focus
+      {
+        border: 1px solid fade(lighten(@btn-default-bg, 20%), 50%);
+      }
     }
   }
 
+}
+
+.nav-tabs.nav-justified {
+  & > li > a {
+    padding: 6px 2px;
+  }
 }
 
 .tab-content {
@@ -475,3 +529,24 @@ a.list-group-item {
     border-color: #000;
   }
 }
+
+.panel-primary .panel-heading {
+  .btn-shadow(@brand-primary);
+}
+
+.panel-success .panel-heading {
+  .btn-shadow(@brand-success);
+}
+
+.panel-danger .panel-heading {
+  .btn-shadow(@brand-danger);
+}
+
+.panel-warning .panel-heading {
+  .btn-shadow(@brand-warning);
+}
+
+.panel-info .panel-heading {
+  .btn-shadow(@brand-info);
+}
+
