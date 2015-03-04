@@ -2,14 +2,34 @@
 // Bootswatch
 // -----------------------------------------------------
 
+.under-shadow(@color, @lightenAmount, @distance) {
+  @lightColor: lighten(@color, @lightenAmount);
+
+  background: @color;
+  background: -moz-linear-gradient(top,  @color 0%, @color @distance, @lightColor @distance, @lightColor 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color), color-stop(@distance,@color), color-stop(@distance,@lightColor), color-stop(100%,@lightColor));
+  background: -webkit-linear-gradient(top,  @color 0%,@color @distance,@lightColor @distance,@lightColor 100%);
+  background: -o-linear-gradient(top,  @color 0%,@color @distance,@lightColor @distance,@lightColor 100%);
+  background: -ms-linear-gradient(top,  @color 0%,@color @distance,@lightColor @distance,@lightColor 100%);
+  background: linear-gradient(to bottom,  @color 0%,@color @distance,@lightColor @distance,@lightColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color', endColorstr='#0000ff',GradientType=0 );
+}
+
+
 .btn-shadow(@color) {
-  #gradient > .vertical-three-colors(lighten(@color, 6%), @color, 60%, darken(@color, 4%));
-  filter: none;
+  .under-shadow(@color, 4%, 90%);
+}
+
+.btn-flat(@color) {
+  .under-shadow(@color, 4%, 100%);
 }
 
 .btn-shadow-inverse(@color) {
-  #gradient > .vertical-three-colors(darken(@color, 24%), darken(@color, 18%), 40%, darken(@color, 14%));
-  filter: none;
+  .under-shadow(lighten(@color, 2%), 3%, 92%);
+}
+
+.btn-flat-inverse(@color) {
+  .under-shadow(lighten(@color, 2%), 3%, 100%);
 }
 
 // Navbar =====================================================================
@@ -343,25 +363,25 @@ legend {
 .pager {
 
   & > li > a {
-    .btn-shadow(@btn-default-bg);
+    .btn-flat(@btn-default-bg);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 
     &:hover {
-      .btn-shadow-inverse(@btn-default-bg);
+      .btn-flat-inverse(@btn-default-bg);
     }
   }
 
   & > li.disabled > a,
   & > li.disabled > a:hover {
     background-color: transparent;
-    .btn-shadow(@btn-default-bg);
+    .btn-flat(@btn-default-bg);
   }
 }
 
 .breadcrumb {
   border: 1px solid rgba(0, 0, 0, 0.6);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  .btn-shadow(@btn-default-bg);
+  .btn-flat(@btn-default-bg);
 }
 
 // Indicators =================================================================
