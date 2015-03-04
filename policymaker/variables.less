@@ -16,12 +16,19 @@
 
 @tint: rgb(130, 124, 128);
 
+// @gray-base:              lighten(multiply(#000, @tint), 15%); // #000
+// @gray-darker:            lighten(multiply(#222, @tint), 15%); // #222
+// @gray-dark:              lighten(multiply(#333, @tint), 15%); // #333
+// @gray:                   lighten(multiply(#555, @tint), 15%); // #555
+// @gray-light:             lighten(multiply(#999, @tint), 15%); // #999
+// @gray-lighter:           lighten(multiply(#eee, @tint), 15%); // #eee
+
 @gray-base:              lighten(multiply(#000, @tint), 15%); // #000
-@gray-darker:            lighten(multiply(#222, @tint), 15%); // #222
-@gray-dark:              lighten(multiply(#333, @tint), 15%); // #333
+@gray-darker:            lighten(multiply(#333, @tint), 15%); // #222
+@gray-dark:              lighten(multiply(#444, @tint), 15%); // #333
 @gray:                   lighten(multiply(#555, @tint), 15%); // #555
-@gray-light:             lighten(multiply(#999, @tint), 15%); // #999
-@gray-lighter:           lighten(multiply(#eee, @tint), 15%); // #eee
+@gray-light:             lighten(multiply(#888, @tint), 15%); // #999
+@gray-lighter:           lighten(multiply(#CCC, @tint), 15%); // #eee
 
 
 @brand-primary:         @gray-light;
@@ -38,7 +45,7 @@
 //** Background color for `<body>`.
 @body-bg:               @gray-darker;
 //** Global text color on `<body>`.
-@text-color:            #C8C8C8;
+@text-color:            #EEEEEE;
 
 //** Global textual link color.
 @link-color:            #fff;
@@ -178,7 +185,7 @@
 @btn-danger-bg:                  @brand-danger;
 @btn-danger-border:              @btn-danger-bg;
 
-@btn-link-disabled-color:        @gray-light;
+@btn-link-disabled-color:        @gray-lighter;
 
 
 //== Forms
@@ -255,7 +262,7 @@
 @dropdown-link-active-bg:        @gray-darker;
 
 //** Disabled dropdown menu item background color.
-@dropdown-link-disabled-color:   @gray-light;
+@dropdown-link-disabled-color:   @gray-lighter;
 
 //** Text color for headers within dropdown menus.
 @dropdown-header-color:          @gray-light;
@@ -375,7 +382,7 @@
 @navbar-default-link-hover-bg:             darken(@navbar-default-bg, 8%);
 @navbar-default-link-active-color:         #fff;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 8%);
-@navbar-default-link-disabled-color:       #ccc;
+@navbar-default-link-disabled-color:       @gray-lighter;
 @navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
@@ -392,7 +399,7 @@
 // Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      #ccc;
-@navbar-inverse-bg:                         @brand-primary;
+@navbar-inverse-bg:                         darken(@brand-primary, 7%);
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
@@ -401,7 +408,7 @@
 @navbar-inverse-link-hover-bg:              darken(@navbar-inverse-bg, 12%);
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
 @navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 12%);
-@navbar-inverse-link-disabled-color:        #ccc;
+@navbar-inverse-link-disabled-color:        @gray-lighter;
 @navbar-inverse-link-disabled-bg:           transparent;
 
 // Inverted navbar brand label
@@ -423,8 +430,8 @@
 @nav-link-padding:                          10px 15px;
 @nav-link-hover-bg:                         lighten(@body-bg, 10%);
 
-@nav-disabled-link-color:                   @gray-light;
-@nav-disabled-link-hover-color:             @gray-light;
+@nav-disabled-link-color:                   @gray-lighter;
+@nav-disabled-link-hover-color:             @gray-lighter;
 
 //== Tabs
 @nav-tabs-border-color:                     darken(@gray-darker, 5%);
@@ -460,7 +467,7 @@
 @pagination-active-bg:                 darken(@pagination-bg, 10%);
 @pagination-active-border:             rgba(0, 0, 0, 0.6);
 
-@pagination-disabled-color:            @gray-light;
+@pagination-disabled-color:            @gray-lighter;
 @pagination-disabled-bg:               #fff;
 @pagination-disabled-border:           rgba(0, 0, 0, 0.6);
 
@@ -478,7 +485,7 @@
 @pager-active-bg:                      @pagination-active-bg;
 @pager-active-color:                   @pagination-active-color;
 
-@pager-disabled-color:                 @gray-light;
+@pager-disabled-color:                 @gray-lighter;
 
 
 //== Jumbotron
@@ -687,7 +694,7 @@
 @list-group-active-text-color:  lighten(@list-group-active-bg, 40%);
 
 //** Text color of disabled list items
-@list-group-disabled-color:      @gray-light;
+@list-group-disabled-color:      @gray-lighter;
 //** Background color of disabled list items
 @list-group-disabled-bg:         @gray-lighter;
 //** Text color for content within disabled list items

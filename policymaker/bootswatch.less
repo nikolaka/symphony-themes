@@ -20,12 +20,20 @@
   .under-shadow(@color, 4%, 90%);
 }
 
+.btn-shadow-custom(@color, @distance) {
+  .under-shadow(@color, 4%, @distance);
+}
+
 .btn-flat(@color) {
   .under-shadow(@color, 4%, 100%);
 }
 
 .btn-shadow-inverse(@color) {
   .under-shadow(lighten(@color, 2%), 3%, 92%);
+}
+
+.btn-shadow-inverse-custom(@color, @distance) {
+  .under-shadow(lighten(@color, 2%), 3%, @distance);
 }
 
 .btn-flat-inverse(@color) {
@@ -76,6 +84,7 @@
 
 .btn,
 .btn:hover {
+  outline: none !important;
   border-color: rgba(0, 0, 0, 0.6);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
@@ -213,7 +222,7 @@ textarea {
   }
 
   .input-group-addon {
-    background-color: @body-bg;
+    // background-color: @body-bg;
     border: none;
   }
 }
@@ -231,7 +240,7 @@ textarea {
   }
 
   .input-group-addon {
-    background-color: @body-bg;
+    // background-color: @body-bg;
     border: none;
   }
 }
@@ -249,7 +258,7 @@ textarea {
   }
 
   .input-group-addon {
-    background-color: @body-bg;
+    // background-color: @body-bg;
     border: none;
   }
 }
@@ -261,7 +270,7 @@ legend {
 .input-group-addon {
   border-color: rgba(0, 0, 0, 0.6);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  .btn-shadow(@btn-default-bg);
+  .btn-shadow(@btn-primary-bg);
   color: @btn-default-color;
 }
 
@@ -327,7 +336,7 @@ legend {
 
 .tab-content {
 
-  padding: 0 @padding-small-horizontal;
+  padding: 0 3px;
   background-color: fade(#000, 20%);
   border-bottom-right-radius: @border-radius-large;
   border-bottom-left-radius: @border-radius-large;
