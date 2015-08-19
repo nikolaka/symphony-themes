@@ -3863,7 +3863,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 0px 8px;
+  padding: 2px 8px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -4380,7 +4380,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-color: transparent;
 }
 .navbar-default .navbar-brand {
-  color: #eeeeee;
+  color: #555555;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -4391,18 +4391,18 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #eeeeee;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #eeeeee;
+  color: #555555;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
-  background-color: #000000;
+  background-color: #141414;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #000000;
+  background-color: #141414;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -4427,23 +4427,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #000000;
+  background-color: #141414;
   color: #ffffff;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #eeeeee;
+    color: #555555;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #ffffff;
-    background-color: #000000;
+    background-color: #141414;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ffffff;
-    background-color: #000000;
+    background-color: #141414;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -4453,13 +4453,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default .navbar-link {
-  color: #eeeeee;
+  color: #555555;
 }
 .navbar-default .navbar-link:hover {
   color: #ffffff;
 }
 .navbar-default .btn-link {
-  color: #eeeeee;
+  color: #555555;
 }
 .navbar-default .btn-link:hover,
 .navbar-default .btn-link:focus {
@@ -4476,7 +4476,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: transparent;
 }
 .navbar-inverse .navbar-brand {
-  color: #000000;
+  color: #555555;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4487,7 +4487,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #000000;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #000000;
+  color: #555555;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -4534,7 +4534,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     background-color: transparent;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #000000;
+    color: #555555;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -4555,13 +4555,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 .navbar-inverse .navbar-link {
-  color: #000000;
+  color: #555555;
 }
 .navbar-inverse .navbar-link:hover {
   color: #000000;
 }
 .navbar-inverse .btn-link {
-  color: #000000;
+  color: #555555;
 }
 .navbar-inverse .btn-link:hover,
 .navbar-inverse .btn-link:focus {
@@ -6836,6 +6836,7 @@ legend {
 .nav-tabs.nav-justified {
   margin-bottom: 0px !important;
   border-bottom: none;
+  font-size: 15px;
 }
 .nav-tabs > li,
 .nav-tabs.nav-justified > li {
@@ -6844,7 +6845,7 @@ legend {
 }
 .nav-tabs > li > a,
 .nav-tabs.nav-justified > li > a {
-  padding: 0px 8px;
+  padding: 2px 8px;
   background: #333333;
   margin-right: 1px;
 }
