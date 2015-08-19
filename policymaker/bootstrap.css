@@ -6599,6 +6599,10 @@ body {
 .navbar-nav > li > a:hover {
   border-left-color: transparent;
 }
+.navbar .navbar-text {
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+}
 .navbar .nav .open > a {
   border-color: transparent;
 }
