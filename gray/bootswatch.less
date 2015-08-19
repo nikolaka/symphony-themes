@@ -19,58 +19,53 @@
 
 
 .btn-shadow(@color) {
-  background: @color;
-  // .under-shadow(@color, 3%, 90%);
+  .under-shadow(@color, 3%, 90%);
 }
 
 .btn-shadow-custom(@color, @distance) {
-  background: @color;
-  // .under-shadow(@color, 3%, @distance);
+  .under-shadow(@color, 3%, @distance);
 }
 
 .btn-flat(@color) {
-  background: @color;
-  // .under-shadow(@color, 3%, 100%);
+  .under-shadow(@color, 3%, 100%);
 }
 
 .btn-shadow-inverse(@color) {
-  background: @color;
-  // .under-shadow(lighten(@color, 5%), 2%, 92%);
+  .under-shadow(lighten(@color, 5%), 2%, 92%);
 }
 
 .btn-shadow-inverse-custom(@color, @distance) {
-  background: @color;
-  // .under-shadow(lighten(@color, 5%), 2%, @distance);
+  .under-shadow(lighten(@color, 5%), 2%, @distance);
 }
 
 .btn-flat-inverse(@color) {
-  background: @color;
-  // .under-shadow(lighten(@color, 5%), 2%, 100%);
-}
-
-// Main =======================================================================
-
-body {
-  font-weight: @font-weight-base;
+  .under-shadow(lighten(@color, 5%), 2%, 100%);
 }
 
 // Navbar =====================================================================
 
 .navbar {
 
-  color: @navbar-default-color;
   margin-bottom: 0;
 
   .btn-flat(@navbar-default-bg);
-  border: none;
-  text-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+  &-inverse {
+    .btn-shadow(@navbar-inverse-bg);
+
+    .badge {
+      background-color: @navbar-inverse-link-active-bg;
+    }
+  }
 
   &-nav > li > a {
-    border-right: none;
-    border-left: none;
-    color: @navbar-default-color;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
 
     &:hover {
+      .btn-shadow-inverse(@navbar-default-bg);
       border-left-color: transparent;
     }
   }
@@ -84,34 +79,9 @@ body {
   }
 
   &-form {
-    margin: @navbar-padding-vertical 5px;
-
-    > input {
-      max-height: @navbar-height - (@navbar-padding-vertical * 2);
-      font-size: @navbar-input-fontsize;
-      line-height: @navbar-input-fontsize;
-    }
+    margin-left: 5px;
+    margin-right: 5px;
   }
-
-  &-inverse {
-    border: none;
-
-    color: @navbar-inverse-color;
-    .btn-shadow(@navbar-inverse-bg);
-
-    .badge {
-      background-color: @navbar-inverse-link-active-bg;
-    }
-
-    > li > a {
-      color: @navbar-inverse-color;
-      &:hover {
-        .btn-shadow-inverse(@navbar-inverse-bg);
-      }
-    }
-  }
-
-
 }
 
 // Buttons ====================================================================
@@ -120,27 +90,13 @@ body {
 .btn:hover {
   outline: none !important;
   border-color: rgba(0, 0, 0, 0.6);
-  text-shadow: none;
-  padding: @btn-padding-v @btn-padding-h;
-  margin: @btn-margin-v @btn-margin-h;
-}
-
-.btn-lg, .btn-lg:hover {
-  padding: (@btn-padding-v * 2) (@btn-padding-h * 2);
-}
-
-.btn-sm, .btn-sm:hover {
-  padding: (@btn-padding-v * 0.75) (@btn-padding-h * 0.75);
-}
-
-.btn-xs, .btn-xs:hover {
-  padding: (@btn-padding-v * 0.5) (@btn-padding-h * 0.5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .btn-default {
   .btn-shadow(@btn-default-bg);
 
-  &:hover, &:active, &:focus {
+  &:hover {
     .btn-shadow-inverse(@btn-default-bg);
   }
 }
@@ -148,7 +104,7 @@ body {
 .btn-primary {
   .btn-shadow(@btn-primary-bg);
 
-  &:hover, &:active, &:focus {
+  &:hover {
     .btn-shadow-inverse(@btn-primary-bg);
   }
 }
@@ -156,7 +112,7 @@ body {
 .btn-success {
   .btn-shadow(@btn-success-bg);
 
-  &:hover, &:active, &:focus {
+  &:hover {
     .btn-shadow-inverse(@btn-success-bg);
   }
 }
@@ -164,7 +120,7 @@ body {
 .btn-info {
   .btn-shadow(@btn-info-bg);
 
-  &:hover, &:active, &:focus {
+  &:hover {
     .btn-shadow-inverse(@btn-info-bg);
   }
 }
@@ -172,7 +128,7 @@ body {
 .btn-warning {
   .btn-shadow(@btn-warning-bg);
 
-  &:hover, &:active, &:focus {
+  &:hover {
     .btn-shadow-inverse(@btn-warning-bg);
   }
 }
@@ -180,7 +136,7 @@ body {
 .btn-danger {
   .btn-shadow(@btn-danger-bg);
 
-  &:hover, &:active, &:focus {
+  &:hover {
     .btn-shadow-inverse(@btn-danger-bg);
   }
 }
@@ -193,11 +149,11 @@ body {
 // Typography =================================================================
 
 h1, h2, h3, h4, h5, h6 {
-  text-shadow: none;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
 }
 
 a {
-  font-weight: @font-weight-base;
+  font-weight: 500;
 }
 
 .text-muted,
@@ -332,7 +288,7 @@ legend {
 
 .input-group-addon {
   border-color: @input-border;
-  text-shadow: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   .btn-shadow(@btn-primary-bg);
   color: @btn-default-color;
 }
@@ -360,7 +316,7 @@ legend {
   & > li > a {
     .btn-shadow(@btn-default-bg);
     border: 1px solid rgba(0, 0, 0, 0.6);
-    text-shadow: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 
     &:hover {
       .btn-shadow-inverse(@btn-default-bg);
@@ -377,7 +333,7 @@ legend {
 
   & > li.disabled > a,
   & > li.disabled > a:hover {
-    .btn-shadow(@btn-disabled-bg);
+    .btn-shadow(@btn-default-bg);
   }
 }
 
@@ -391,9 +347,8 @@ legend {
     border-top-left-radius: @border-radius-large;
 
     & > a {
-      padding: @nav-link-padding;
+      padding: 6px 12px;
       .btn-shadow-custom(@btn-default-bg, 88%);
-      margin-right: @nav-tabs-spacing;
 
       &:hover {
         .btn-shadow-inverse-custom(@btn-default-bg, 88%);
@@ -403,13 +358,12 @@ legend {
     &.active > a,
     &.active > a:hover {
       background-color: none;
-      .btn-shadow-inverse-custom(@btn-primary-bg, 88%);
-      color: @black;
+      .btn-shadow-inverse-custom(lighten(@btn-default-bg, 5%), 88%);
     }
 
     &.disabled > a,
     &.disabled > a:hover {
-      .btn-shadow(@btn-disabled-bg);
+      .btn-shadow-custom(@btn-default-bg, 88%);
     }
 
     &,
@@ -430,6 +384,12 @@ legend {
 
 }
 
+.nav-tabs.nav-justified {
+  & > li > a {
+    padding: 6px 2px;
+  }
+}
+
 .tab-content {
 
   padding: 0 3px;
@@ -443,17 +403,17 @@ legend {
 
   & > li > a,
   & > li > span {
-    text-shadow: none;
-    .btn-shadow(@pagination-bg);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    .btn-shadow(@btn-default-bg);
 
     &:hover {
-      .btn-shadow-inverse(@pagination-hover-bg);
+      .btn-shadow-inverse(@btn-default-bg);
     }
   }
 
   & > li.active > a,
   & > li.active > span {
-    .btn-shadow-inverse(@pagination-active-bg);
+    .btn-shadow-inverse(@btn-default-bg);
   }
 
   & > li.disabled > a,
@@ -469,7 +429,7 @@ legend {
 
   & > li > a {
     .btn-flat(@btn-default-bg);
-    text-shadow: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 
     &:hover {
       .btn-flat-inverse(@btn-default-bg);
@@ -485,7 +445,7 @@ legend {
 
 .breadcrumb {
   border: 1px solid rgba(0, 0, 0, 0.6);
-  text-shadow: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   .btn-flat(@btn-default-bg);
 }
 
@@ -495,6 +455,7 @@ legend {
 
   .alert-link,
   a {
+    color: #fff;
     text-decoration: underline;
   }
 
@@ -502,20 +463,7 @@ legend {
     color: @close-color;
     text-decoration: none;
   }
-
 }
-
-// Labels =====================================================================
-
-.label {
-  &.label-default { color: @label-default-color; }
-  &.label-primary { color: @label-primary-color; }
-  &.label-success { color: @label-success-color; }
-  &.label-info { color: @label-info-color; }
-  &.label-warning { color: @label-warning-color; }
-  &.label-danger { color: @label-danger-color; }
-}
-
 
 // Progress bars ==============================================================
 
@@ -581,34 +529,26 @@ a.list-group-item {
 
   .panel-heading {
     border-color: #000;
-    .panel-title {
-      text-shadow: none;
-    }
   }
 }
 
 .panel-primary .panel-heading {
   .btn-shadow(@brand-primary);
-  color: @btn-primary-color;
 }
 
 .panel-success .panel-heading {
   .btn-shadow(@brand-success);
-  color: @btn-success-color;
 }
 
 .panel-danger .panel-heading {
   .btn-shadow(@brand-danger);
-  color: @btn-danger-color;
 }
 
 .panel-warning .panel-heading {
   .btn-shadow(@brand-warning);
-  color: @btn-warning-color;
 }
 
 .panel-info .panel-heading {
   .btn-shadow(@brand-info);
-  color: @btn-info-color;
 }
 

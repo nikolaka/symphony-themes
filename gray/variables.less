@@ -1,28 +1,26 @@
-// Symphony policy maker
-
-@import "scheme";
+// Slate 3.3.2
 
 // Fonts =====================================================================
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Raleway';
   font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url(http://fonts.gstatic.com/s/raleway/v9/CcKI4k9un7TZVWzRVT-T8_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(http://fonts.gstatic.com/s/raleway/v9/JbtMzqLaYbbbCL9X6EvaI_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -34,18 +32,35 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base:              #000;
-@gray-darker:            #222;
-@gray-dark:              #333;
-@gray:                   #555;
-@gray-light:             #999;
-@gray-lighter:           #eee;
+// @gray-base:              lighten(#000, 2%);
+// @gray-darker:            lighten(#302B27, 2%); // #222
+// @gray-dark:              lighten(#443F3A, 2%);   // #333
+// @gray:                   lighten(#5C5752, 2%); // #555
+// @gray-light:             lighten(#88827A, 2%);   // #999
+// @gray-lighter:           lighten(#999, 2%); // #eee
 
-@brand-primary:         @blue;
-@brand-success:         @green;
-@brand-info:            @yellow;
-@brand-warning:         @orange;
-@brand-danger:          @red;
+@tint: rgb(126, 124, 130);
+
+// @gray-base:              lighten(multiply(#000, @tint), 15%); // #000
+// @gray-darker:            lighten(multiply(#222, @tint), 15%); // #222
+// @gray-dark:              lighten(multiply(#333, @tint), 15%); // #333
+// @gray:                   lighten(multiply(#555, @tint), 15%); // #555
+// @gray-light:             lighten(multiply(#999, @tint), 15%); // #999
+// @gray-lighter:           lighten(multiply(#eee, @tint), 15%); // #eee
+
+@gray-base:              lighten(multiply(#000, @tint), 15%); // #000
+@gray-darker:            lighten(multiply(#333, @tint), 15%); // #222
+@gray-dark:              lighten(multiply(#444, @tint), 15%); // #333
+@gray:                   lighten(multiply(#555, @tint), 15%); // #555
+@gray-light:             lighten(multiply(#888, @tint), 15%); // #999
+@gray-lighter:           lighten(multiply(#CCC, @tint), 15%); // #eee
+
+
+@brand-primary:         @gray-light;
+@brand-success:         desaturate(#62c462, 10%); // #62c462, #2ECC40
+@brand-info:            desaturate(spin(#5bc0de, 60), 10%); // #5bc0de, #B10DC9
+@brand-warning:         desaturate(#f89406, 10%); // #f89406, #FF851B
+@brand-danger:          desaturate(#ee5f5b, 10%); // #ee5f5b, #FF4136
 
 
 //== Scaffolding
@@ -53,7 +68,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               @background;
+@body-bg:               @gray-darker;
 //** Global text color on `<body>`.
 @text-color:            #EEEEEE;
 
@@ -64,22 +79,16 @@
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
-@active-bg: @brand-primary;
-@active-color: @black;
-@active-hover-bg: darken(@brand-primary, 15%);
-@active-hover-color: @black;
-
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
-@font-weight-base:        600;
 
 @font-size-base:          14px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
@@ -99,7 +108,7 @@
 
 //** By default, this inherits from the `<body>`.
 @headings-font-family:    @font-family-base;
-@headings-font-weight:    @font-weight-base;
+@headings-font-weight:    500;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
@@ -175,37 +184,29 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-@btn-font-weight:                @font-weight-base;
-@btn-padding-v:                  3px;
-@btn-padding-h:                  6px;
-@btn-margin-v:                   0px;
-@btn-margin-h:                   1px;
+@btn-font-weight:                normal;
 
-@btn-default-color:              @white;
+@btn-default-color:              #fff;
 @btn-default-bg:                 @gray-dark;
 @btn-default-border:             @btn-default-bg;
 
-@btn-disabled-color:             @gray;
-@btn-disabled-bg:                darken(@gray-dark, 10%);
-@btn-disabled-border:            @btn-default-bg;
-
-@btn-primary-color:              @black;
+@btn-primary-color:              @btn-default-color;
 @btn-primary-bg:                 @brand-primary;
 @btn-primary-border:             @btn-primary-bg;
 
-@btn-success-color:              @white;
+@btn-success-color:              @btn-default-color;
 @btn-success-bg:                 @brand-success;
 @btn-success-border:             @btn-success-bg;
 
-@btn-info-color:                 @black;
+@btn-info-color:                 @btn-default-color;
 @btn-info-bg:                    @brand-info;
 @btn-info-border:                @btn-info-bg;
 
-@btn-warning-color:              @white;
+@btn-warning-color:              @btn-default-color;
 @btn-warning-bg:                 @brand-warning;
 @btn-warning-border:             @btn-warning-bg;
 
-@btn-danger-color:               @white;
+@btn-danger-color:               @btn-default-color;
 @btn-danger-bg:                  @brand-danger;
 @btn-danger-border:              @btn-danger-bg;
 
@@ -389,17 +390,16 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    30px;
+@navbar-height:                    50px;
 @navbar-margin-bottom:             @line-height-computed;
-@navbar-border-radius:             0;
-@navbar-padding-horizontal:        5px;
+@navbar-border-radius:             @border-radius-base;
+@navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
-@navbar-input-fontsize:            12px;
 
 @navbar-default-color:             @text-color;
-@navbar-default-bg:                @black;
-@navbar-default-border:            transparent;
+@navbar-default-bg:                @gray-dark;
+@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
 @navbar-default-link-color:                @text-color;
@@ -423,13 +423,13 @@
 
 // Inverted navbar
 // Reset inverted navbar basics
-@navbar-inverse-color:                      @black;
+@navbar-inverse-color:                      #ccc;
 @navbar-inverse-bg:                         darken(@brand-primary, 7%);
-@navbar-inverse-border:                     transparent;
+@navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
-@navbar-inverse-link-color:                 @black;
-@navbar-inverse-link-hover-color:           @black;
+@navbar-inverse-link-color:                 #ccc;
+@navbar-inverse-link-hover-color:           #fff;
 @navbar-inverse-link-hover-bg:              darken(@navbar-inverse-bg, 12%);
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
 @navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 12%);
@@ -438,7 +438,7 @@
 
 // Inverted navbar brand label
 @navbar-inverse-brand-color:                @navbar-inverse-link-color;
-@navbar-inverse-brand-hover-color:          @black;
+@navbar-inverse-brand-hover-color:          #fff;
 @navbar-inverse-brand-hover-bg:             none;
 
 // Inverted navbar toggle
@@ -452,16 +452,14 @@
 //##
 
 //=== Shared nav styles
-@nav-link-padding:                          0px 8px;
+@nav-link-padding:                          10px 15px;
 @nav-link-hover-bg:                         lighten(@body-bg, 10%);
 
-@nav-disabled-link-color:                   @white;
-@nav-disabled-link-hover-color:             @gray;
+@nav-disabled-link-color:                   @gray-lighter;
+@nav-disabled-link-hover-color:             @gray-lighter;
 
 //== Tabs
 @nav-tabs-border-color:                     darken(@gray-darker, 5%);
-
-@nav-tabs-spacing:                          1px;
 
 @nav-tabs-link-hover-border-color:          darken(@gray-darker, 5%);
 
@@ -490,8 +488,8 @@
 @pagination-hover-bg:                  transparent;
 @pagination-hover-border:              rgba(0, 0, 0, 0.6);
 
-@pagination-active-color:              @black;
-@pagination-active-bg:                 @btn-primary-bg;
+@pagination-active-color:              #fff;
+@pagination-active-bg:                 darken(@pagination-bg, 10%);
 @pagination-active-border:             rgba(0, 0, 0, 0.6);
 
 @pagination-disabled-color:            @gray-lighter;
@@ -598,24 +596,21 @@
 //
 //##
 
-@label-default-color:         @white;
+//** Default label background color
 @label-default-bg:            @btn-default-bg;
-
-@label-primary-color:         @black;
+//** Primary label background color
 @label-primary-bg:            @brand-primary;
-
-@label-success-color:         @white;
+//** Success label background color
 @label-success-bg:            @brand-success;
-
-@label-info-color:            @black;
+//** Info label background color
 @label-info-bg:               @brand-info;
-
-@label-warning-color:         @white;
+//** Warning label background color
 @label-warning-bg:            @brand-warning;
-
-@label-danger-color:          @white;
+//** Danger label background color
 @label-danger-bg:             @brand-danger;
 
+//** Default label text color
+@label-color:                 #fff;
 //** Default text color of a linked label
 @label-link-hover-color:      #fff;
 
@@ -666,7 +661,7 @@
 @alert-success-border:        @state-success-border;
 
 @alert-info-bg:               @state-info-bg;
-@alert-info-text:             @black;
+@alert-info-text:             @state-info-text;
 @alert-info-border:           @state-info-border;
 
 @alert-warning-bg:            @state-warning-bg;
@@ -715,9 +710,9 @@
 //** Background color of single list items on hover
 @list-group-hover-bg:           lighten(@body-bg, 10%);
 //** Text color of active list items
-@list-group-active-color:       @black;
+@list-group-active-color:       @component-active-color;
 //** Background color of active list items
-@list-group-active-bg:          @brand-primary;
+@list-group-active-bg:          lighten(@body-bg, 10%);
 //** Border color of active list elements
 @list-group-active-border:      @list-group-border;
 //** Text color for content within active list items
