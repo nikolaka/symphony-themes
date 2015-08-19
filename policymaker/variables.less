@@ -48,12 +48,14 @@
 @brand-danger:          @red;
 
 
+
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
 @body-bg:               @background;
+@dark-panel:            darken(@body-bg, 5%);
 //** Global text color on `<body>`.
 @text-color:            #EEEEEE;
 
@@ -160,7 +162,7 @@
 @table-condensed-cell-padding:  5px;
 
 //** Default background color used for all tables.
-@table-bg:                      lighten(@body-bg, 3%);
+@table-bg:                      @dark-panel;
 //** Background color used for `.table-striped`.
 @table-bg-accent:               lighten(@table-bg, 3%);
 //** Background color used for `.table-hover`.
@@ -390,10 +392,11 @@
 
 // Basics of a navbar
 @navbar-height:                    30px;
-@navbar-margin-bottom:             @line-height-computed;
+@navbar-fontsize:                  18px;
+@navbar-margin-bottom:             @navbar-fontsize;
 @navbar-border-radius:             0;
 @navbar-padding-horizontal:        5px;
-@navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
+@navbar-padding-vertical:          ((@navbar-height - @navbar-fontsize) / 2);
 @navbar-collapse-max-height:       340px;
 @navbar-input-fontsize:            12px;
 
@@ -403,10 +406,10 @@
 
 // Navbar links
 @navbar-default-link-color:                @gray;
-@navbar-default-link-hover-color:          @white;
-@navbar-default-link-hover-bg:             lighten(@navbar-default-bg, 8%);
-@navbar-default-link-active-color:         @white;
-@navbar-default-link-active-bg:            lighten(@navbar-default-bg, 8%);
+@navbar-default-link-hover-color:          @brand-primary;
+@navbar-default-link-hover-bg:             lighten(@navbar-default-bg, 15%);
+@navbar-default-link-active-color:         @brand-primary;
+@navbar-default-link-active-bg:            transparent;
 @navbar-default-link-disabled-color:       @gray-lighter;
 @navbar-default-link-disabled-bg:          transparent;
 
@@ -453,7 +456,7 @@
 
 //=== Shared nav styles
 @nav-link-padding:                          2px 8px;
-@nav-link-hover-bg:                         lighten(@body-bg, 10%);
+@nav-link-hover-bg:                         @dark-panel;
 
 @nav-disabled-link-color:                   @white;
 @nav-disabled-link-hover-color:             @gray;
@@ -466,7 +469,7 @@
 
 @nav-tabs-link-hover-border-color:          darken(@gray-darker, 5%);
 
-@nav-tabs-active-link-hover-bg:             lighten(@body-bg, 10%);
+@nav-tabs-active-link-hover-bg:             @dark-panel;
 @nav-tabs-active-link-hover-color:          #fff;
 @nav-tabs-active-link-hover-border-color:   darken(@gray-darker, 5%);
 
@@ -522,7 +525,7 @@
 
 @jumbotron-padding:              30px;
 @jumbotron-color:                inherit;
-@jumbotron-bg:                   darken(@body-bg, 5%);
+@jumbotron-bg:                   @dark-panel;
 @jumbotron-heading-color:        inherit;
 @jumbotron-font-size:            ceil((@font-size-base * 1.5));
 
@@ -557,8 +560,8 @@
 //** Tooltip text color
 @tooltip-color:               #fff;
 //** Tooltip background color
-@tooltip-bg:                  rgba(0,0,0,.9);
-@tooltip-opacity:             .9;
+@tooltip-bg:                  @dark-panel;
+@tooltip-opacity:             .95;
 
 //** Tooltip arrow width
 @tooltip-arrow-width:         5px;
@@ -571,7 +574,7 @@
 //##
 
 //** Popover body background color
-@popover-bg:                          lighten(@body-bg, 3%);
+@popover-bg:                          @dark-panel;
 //** Popover maximum width
 @popover-max-width:                   276px;
 //** Popover border color
@@ -634,7 +637,7 @@
 @modal-title-line-height:     @line-height-base;
 
 //** Background color of modal content area
-@modal-content-bg:                             lighten(@body-bg, 3%);
+@modal-content-bg:                             @dark-panel;
 //** Modal content border color
 @modal-content-border-color:                   rgba(0,0,0,.2);
 //** Modal content border color **for IE8**
@@ -684,7 +687,7 @@
 //##
 
 //** Background color of the whole progress component
-@progress-bg:                 darken(@body-bg, 5%);
+@progress-bg:                 @dark-panel;
 //** Progress bar text color
 @progress-bar-color:          #fff;
 //** Variable for setting rounded corners on progress bar.
@@ -707,14 +710,14 @@
 //##
 
 //** Background color on `.list-group-item`
-@list-group-bg:                 lighten(@body-bg, 5%);
+@list-group-bg:                 @dark-panel;
 //** `.list-group-item` border color
 @list-group-border:             rgba(0, 0, 0, 0.6);
 //** List group border radius
 @list-group-border-radius:      @border-radius-base;
 
 //** Background color of single list items on hover
-@list-group-hover-bg:           lighten(@body-bg, 10%);
+@list-group-hover-bg:           @body-bg;
 //** Text color of active list items
 @list-group-active-color:       @black;
 //** Background color of active list items
@@ -740,15 +743,15 @@
 //
 //##
 
-@panel-bg:                    lighten(@body-bg, 3%);
-@panel-body-padding:          15px;
-@panel-heading-padding:       10px 15px;
+@panel-bg:                    @dark-panel;
+@panel-body-padding:          6px;
+@panel-heading-padding:       8px 8px;
 @panel-footer-padding:        @panel-heading-padding;
 @panel-border-radius:         @border-radius-base;
 
 //** Border color for elements within panels
 @panel-inner-border:          rgba(0, 0, 0, 0.6);
-@panel-footer-bg:             lighten(@body-bg, 10%);
+@panel-footer-bg:             darken(@dark-panel, 5%);
 
 @panel-default-text:          @text-color;
 @panel-default-border:        rgba(0, 0, 0, 0.6);
@@ -782,7 +785,7 @@
 //** Padding around the thumbnail image
 @thumbnail-padding:           4px;
 //** Thumbnail background color
-@thumbnail-bg:                darken(@body-bg, 5%);
+@thumbnail-bg:                @dark-panel;
 //** Thumbnail border color
 @thumbnail-border:            darken(@thumbnail-bg, 7%);
 //** Thumbnail border radius
@@ -806,15 +809,15 @@
 //
 //##
 
-@badge-color:                 #fff;
+@badge-color:                 @white;
 //** Linked badge text color on hover
-@badge-link-hover-color:      #fff;
-@badge-bg:                    @gray-light;
+@badge-link-hover-color:      @white;
+@badge-bg:                    @highlight-bg;
 
 //** Badge text color in active nav link
 @badge-active-color:          @link-color;
 //** Badge background color in active nav link
-@badge-active-bg:             @gray-light;
+@badge-active-bg:             @badge-bg;
 
 @badge-font-weight:           bold;
 @badge-line-height:           1;

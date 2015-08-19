@@ -17,35 +17,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color', endColorstr='#0000ff',GradientType=0 );
 }
 
-
-.btn-shadow(@color) {
+.background(@color) {
   background: @color;
-  // .under-shadow(@color, 3%, 90%);
-}
-
-.btn-shadow-custom(@color, @distance) {
-  background: @color;
-  // .under-shadow(@color, 3%, @distance);
-}
-
-.btn-flat(@color) {
-  background: @color;
-  // .under-shadow(@color, 3%, 100%);
-}
-
-.btn-shadow-inverse(@color) {
-  background: @color;
-  // .under-shadow(lighten(@color, 5%), 2%, 92%);
-}
-
-.btn-shadow-inverse-custom(@color, @distance) {
-  background: @color;
-  // .under-shadow(lighten(@color, 5%), 2%, @distance);
-}
-
-.btn-flat-inverse(@color) {
-  background: @color;
-  // .under-shadow(lighten(@color, 5%), 2%, 100%);
 }
 
 // Main =======================================================================
@@ -60,8 +33,9 @@ body {
 
   color: @navbar-default-color;
   margin-bottom: 0;
+  font-size: @navbar-fontsize;
 
-  .btn-flat(@navbar-default-bg);
+  .background(@navbar-default-bg);
   border: none;
   text-shadow: none;
 
@@ -97,7 +71,7 @@ body {
     border: none;
 
     color: @navbar-inverse-color;
-    .btn-shadow(@navbar-inverse-bg);
+    .background(@navbar-inverse-bg);
 
     .badge {
       background-color: @navbar-inverse-link-active-bg;
@@ -106,7 +80,7 @@ body {
     > li > a {
       color: @navbar-inverse-color;
       &:hover {
-        .btn-shadow-inverse(@navbar-inverse-bg);
+        .background(@navbar-inverse-bg);
       }
     }
   }
@@ -138,50 +112,50 @@ body {
 }
 
 .btn-default {
-  .btn-shadow(@btn-default-bg);
+  .background(@btn-default-bg);
 
   &:hover, &:active, &:focus {
-    .btn-shadow-inverse(@btn-default-bg);
+    .background(@btn-default-bg);
   }
 }
 
 .btn-primary {
-  .btn-shadow(@btn-primary-bg);
+  .background(@btn-primary-bg);
 
   &:hover, &:active, &:focus {
-    .btn-shadow-inverse(@btn-primary-bg);
+    .background(@btn-primary-bg);
   }
 }
 
 .btn-success {
-  .btn-shadow(@btn-success-bg);
+  .background(@btn-success-bg);
 
   &:hover, &:active, &:focus {
-    .btn-shadow-inverse(@btn-success-bg);
+    .background(@btn-success-bg);
   }
 }
 
 .btn-info {
-  .btn-shadow(@btn-info-bg);
+  .background(@btn-info-bg);
 
   &:hover, &:active, &:focus {
-    .btn-shadow-inverse(@btn-info-bg);
+    .background(@btn-info-bg);
   }
 }
 
 .btn-warning {
-  .btn-shadow(@btn-warning-bg);
+  .background(@btn-warning-bg);
 
   &:hover, &:active, &:focus {
-    .btn-shadow-inverse(@btn-warning-bg);
+    .background(@btn-warning-bg);
   }
 }
 
 .btn-danger {
-  .btn-shadow(@btn-danger-bg);
+  .background(@btn-danger-bg);
 
   &:hover, &:active, &:focus {
-    .btn-shadow-inverse(@btn-danger-bg);
+    .background(@btn-danger-bg);
   }
 }
 
@@ -333,7 +307,7 @@ legend {
 .input-group-addon {
   border-color: @input-border;
   text-shadow: none;
-  .btn-shadow(@btn-primary-bg);
+  .background(@btn-primary-bg);
   color: @btn-default-color;
 }
 
@@ -358,12 +332,12 @@ legend {
 .nav-pills {
 
   & > li > a {
-    .btn-shadow(@btn-default-bg);
+    .background(@btn-default-bg);
     border: 1px solid rgba(0, 0, 0, 0.6);
     text-shadow: none;
 
     &:hover {
-      .btn-shadow-inverse(@btn-default-bg);
+      .background(@btn-default-bg);
       border: 1px solid rgba(0, 0, 0, 0.6);
     }
   }
@@ -371,13 +345,13 @@ legend {
   & > li.active > a,
   & > li.active > a:hover {
     background-color: none;
-    .btn-shadow-inverse(@btn-default-bg);
+    .background(@btn-default-bg);
     border: 1px solid rgba(0, 0, 0, 0.6);
   }
 
   & > li.disabled > a,
   & > li.disabled > a:hover {
-    .btn-shadow(@btn-disabled-bg);
+    .background(@btn-disabled-bg);
   }
 }
 
@@ -393,24 +367,24 @@ legend {
 
     & > a {
       padding: @nav-link-padding;
-      .btn-shadow-custom(@btn-default-bg, 88%);
+      .background(@btn-default-bg);
       margin-right: @nav-tabs-spacing;
 
       &:hover {
-        .btn-shadow-inverse-custom(@btn-default-bg, 88%);
+        .background(@btn-default-bg);
       }
     }
 
     &.active > a,
     &.active > a:hover {
       background-color: none;
-      .btn-shadow-inverse-custom(@btn-primary-bg, 88%);
+      .background(@btn-primary-bg);
       color: @black;
     }
 
     &.disabled > a,
     &.disabled > a:hover {
-      .btn-shadow(@btn-disabled-bg);
+      .background(@btn-disabled-bg);
     }
 
     &,
@@ -445,16 +419,16 @@ legend {
   & > li > a,
   & > li > span {
     text-shadow: none;
-    .btn-shadow(@pagination-bg);
+    .background(@pagination-bg);
 
     &:hover {
-      .btn-shadow-inverse(@pagination-hover-bg);
+      .background(@pagination-hover-bg);
     }
   }
 
   & > li.active > a,
   & > li.active > span {
-    .btn-shadow-inverse(@pagination-active-bg);
+    .background(@pagination-active-bg);
   }
 
   & > li.disabled > a,
@@ -462,32 +436,32 @@ legend {
   & > li.disabled > span,
   & > li.disabled > span:hover {
     background-color: transparent;
-    .btn-shadow(@btn-default-bg);
+    .background(@btn-default-bg);
   }
 }
 
 .pager {
 
   & > li > a {
-    .btn-flat(@btn-default-bg);
+    .background(@btn-default-bg);
     text-shadow: none;
 
     &:hover {
-      .btn-flat-inverse(@btn-default-bg);
+      .background(@btn-default-bg);
     }
   }
 
   & > li.disabled > a,
   & > li.disabled > a:hover {
     background-color: transparent;
-    .btn-flat(@btn-default-bg);
+    .background(@btn-default-bg);
   }
 }
 
 .breadcrumb {
   border: 1px solid rgba(0, 0, 0, 0.6);
   text-shadow: none;
-  .btn-flat(@btn-default-bg);
+  .background(@btn-default-bg);
 }
 
 // Indicators =================================================================
@@ -589,27 +563,27 @@ a.list-group-item {
 }
 
 .panel-primary .panel-heading {
-  .btn-shadow(@brand-primary);
+  .background(@brand-primary);
   color: @btn-primary-color;
 }
 
 .panel-success .panel-heading {
-  .btn-shadow(@brand-success);
+  .background(@brand-success);
   color: @btn-success-color;
 }
 
 .panel-danger .panel-heading {
-  .btn-shadow(@brand-danger);
+  .background(@brand-danger);
   color: @btn-danger-color;
 }
 
 .panel-warning .panel-heading {
-  .btn-shadow(@brand-warning);
+  .background(@brand-warning);
   color: @btn-warning-color;
 }
 
 .panel-info .panel-heading {
-  .btn-shadow(@brand-info);
+  .background(@brand-info);
   color: @btn-info-color;
 }
 
