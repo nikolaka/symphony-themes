@@ -175,13 +175,25 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: none;
 }
 
+h1 {
+  font-family: @font-family-loud;
+  text-shadow: 0 0.05em 0 fade(@white, 50%);
+
+  &.text-muted   { text-shadow: 0 0.05em 0 fade(@gray-lighter, 50%) }
+  &.text-primary { text-shadow: 0 0.05em 0 fade(@brand-primary, 50%); }
+  &.text-success { text-shadow: 0 0.05em 0 fade(@brand-success, 50%); }
+  &.text-danger  { text-shadow: 0 0.05em 0 fade(@brand-danger, 50%); }
+  &.text-warning { text-shadow: 0 0.05em 0 fade(@brand-warning, 50%); }
+  &.text-info    { text-shadow: 0 0.05em 0 fade(@brand-info, 50%); }
+}
+
 a {
   font-weight: @font-weight-base;
 }
 
 .text-muted,
 .text-muted:hover {
-  color: @gray-lighter
+  color: @gray;
 }
 
 .text-primary,
@@ -207,6 +219,11 @@ a {
 .text-info,
 .text-info:hover {
   color: @brand-info;
+}
+
+.text-loud,
+.text-loud:hover {
+  font-family: @font-family-loud;
 }
 
 blockquote {
@@ -491,13 +508,42 @@ legend {
   &.label-default { color: @label-default-color; }
   &.label-primary { color: @label-primary-color; }
   &.label-success { color: @label-success-color; }
-  &.label-info { color: @label-info-color; }
+  &.label-info    { color: @label-info-color; }
   &.label-warning { color: @label-warning-color; }
-  &.label-danger { color: @label-danger-color; }
+  &.label-danger  { color: @label-danger-color; }
 }
 
 
 // Progress bars ==============================================================
+
+// Modals =====================================================================
+
+.modal {
+  .modal-content {
+    border: 1px solid @modal-content-border-color;
+
+    .modal-header {
+      .modal-title {
+        text-align: center;
+        margin-top: -24px;
+      }
+
+      .close {
+        position: absolute;
+        right: 4px;
+        top: 0;
+        margin: 5px;
+      }
+    }
+  }
+
+  &.modal-primary { .modal-content { border-color: fade(@brand-primary, 50%); } }
+  &.modal-success { .modal-content { border-color: fade(@brand-success, 50%); } }
+  &.modal-info    { .modal-content { border-color: fade(@brand-info, 50%); } }
+  &.modal-warning { .modal-content { border-color: fade(@brand-warning, 50%); } }
+  &.modal-danger  { .modal-content { border-color: fade(@brand-danger, 50%); } }
+}
+
 
 // Containers =================================================================
 

@@ -26,6 +26,21 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+@font-face {
+  font-family: 'Square';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('fonts/Square.eot');
+  src:  local('SquareFont'),
+        local('Square Font'),
+        local('Square'),
+        url('fonts/Square.woff') format('woff'),
+        url('fonts/Square.ttf') format('truetype'),
+        url('fonts/Square.svg') format('svg');
+}
+
+
+
 // Variables
 // --------------------------------------------------
 
@@ -34,12 +49,11 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base:              #000;
-@gray-darker:            #222;
-@gray-dark:              #333;
-@gray:                   #555;
-@gray-light:             #999;
-@gray-lighter:           #eee;
+@gray-base:             @gray;
+@gray-darker:           #222;
+@gray-dark:             #333;
+@gray-light:            #999;
+@gray-lighter:          #eee;
 
 @brand-primary:         @blue;
 @brand-success:         @green;
@@ -82,6 +96,7 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 @font-weight-base:        600;
+@font-family-loud:        Square, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @font-size-base:          14px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
@@ -294,7 +309,7 @@
 @dropdown-header-color:          @gray-light;
 
 //** Deprecated `@dropdown-caret-color` as of v3.1.0
-@dropdown-caret-color:           #000;
+@dropdown-caret-color:           @white;
 
 
 //-- Z-index master list
@@ -629,10 +644,10 @@
 //##
 
 //** Padding applied to the modal body
-@modal-inner-padding:         20px;
+@modal-inner-padding:         10px;
 
 //** Padding applied to the modal title
-@modal-title-padding:         15px;
+@modal-title-padding:         0px;
 //** Modal title line-height
 @modal-title-line-height:     @line-height-base;
 
@@ -648,7 +663,7 @@
 //** Modal backdrop opacity
 @modal-backdrop-opacity:      .5;
 //** Modal header border color
-@modal-header-border-color:   darken(@gray-darker, 5%);
+@modal-header-border-color:   transparent;
 //** Modal footer border color
 @modal-footer-border-color:   @modal-header-border-color;
 
@@ -862,7 +877,7 @@
 //##
 
 @close-font-weight:           bold;
-@close-color:                 #000;
+@close-color:                 @white;
 @close-text-shadow:           0 1px 0 #fff;
 
 
