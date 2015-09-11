@@ -169,6 +169,22 @@ body {
   border-color: transparent;
 }
 
+.btn.btn-hollow {
+  background-color: transparent;
+
+  &:hover {
+    background-color: fade(@white, 10%);
+  }
+
+  &.btn-default { color: @white;         border: 2px solid @white; }
+  &.btn-primary { color: @brand-primary; border: 2px solid @brand-primary; }
+  &.btn-success { color: @brand-success; border: 2px solid @brand-success; }
+  &.btn-info    { color: @brand-info;    border: 2px solid @brand-info; }
+  &.btn-warning { color: @brand-warning; border: 2px solid @brand-warning; }
+  &.btn-danger  { color: @brand-danger;  border: 2px solid @brand-danger; }
+  &.disabled    { color: @gray;          border: 2px solid @gray }
+}
+
 // Typography =================================================================
 
 h1, h2, h3, h4, h5, h6 {

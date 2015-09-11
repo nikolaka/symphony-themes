@@ -6713,6 +6713,40 @@ body {
 .btn-link:hover {
   border-color: transparent;
 }
+.btn.btn-hollow {
+  background-color: transparent;
+}
+.btn.btn-hollow:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn.btn-hollow.btn-default {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.btn.btn-hollow.btn-primary {
+  color: #00bdec;
+  border: 2px solid #00bdec;
+}
+.btn.btn-hollow.btn-success {
+  color: #2dd961;
+  border: 2px solid #2dd961;
+}
+.btn.btn-hollow.btn-info {
+  color: #e5ff02;
+  border: 2px solid #e5ff02;
+}
+.btn.btn-hollow.btn-warning {
+  color: #df7207;
+  border: 2px solid #df7207;
+}
+.btn.btn-hollow.btn-danger {
+  color: #ff4d4d;
+  border: 2px solid #ff4d4d;
+}
+.btn.btn-hollow.disabled {
+  color: #808080;
+  border: 2px solid #808080;
+}
 h1,
 h2,
 h3,
