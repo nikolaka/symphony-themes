@@ -3783,7 +3783,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   line-height: 1;
   color: #eeeeee;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #222222;
   border: 1px solid #6f6f6f;
   border-radius: 4px;
 }
@@ -6874,7 +6874,6 @@ legend {
 .input-group-addon {
   border-color: #6f6f6f;
   text-shadow: none;
-  background: #00bdec;
   color: #ffffff;
 }
 .input-group-btn .btn {
