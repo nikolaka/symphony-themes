@@ -167,6 +167,7 @@ body {
 .btn-link,
 .btn-link:hover {
   border-color: transparent;
+  border-radius: @border-radius-base;
 }
 
 .btn.btn-hollow {
@@ -183,6 +184,11 @@ body {
   &.btn-warning { color: @brand-warning; border: 2px solid @brand-warning; }
   &.btn-danger  { color: @brand-danger;  border: 2px solid @brand-danger; }
   &.disabled    { color: @gray;          border: 2px solid @gray }
+  &.btn-link, &.btn-link:hover {
+    color: @gray;
+    border: 2px solid @gray;
+    text-decoration: none;
+  }
 }
 
 // Typography =================================================================
